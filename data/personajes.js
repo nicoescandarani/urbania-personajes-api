@@ -10,8 +10,6 @@ async function getPersonajes(){
     return personajes;
 }
 
-
-
 async function addPersonaje(personaje){
     const clientmongo = await connection.getConnection();
     const result = await clientmongo.db('urbania')
@@ -19,7 +17,5 @@ async function addPersonaje(personaje){
                                         .insertOne(personaje);
     return result;
 }
-
-
 
 module.exports = {getPersonajes, addPersonaje};

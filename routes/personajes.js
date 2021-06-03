@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
-
+const dataPersonajes = require('../data/personajes');
+const joi = require('joi');
 
 /* GET personajes listing. */
 router.get('/', async function(req, res, next) {
