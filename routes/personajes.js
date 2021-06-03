@@ -1,9 +1,28 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+
 
 /* GET personajes listing. */
-router.get('/', function(req, res, next) {
-  res.send('HOLA!!');
+router.get('/', async function(req, res, next) {
+  let personajes = await dataPersonajes.getPersonajes();
+  res.json(personajes);
 });
+
+/* POST Añadir personaje sin ID (el objectID se genera en bbdd). */
+router.post('/', async (req, res)=>{
+    const schema = joi.object({
+      //VER CAMPOS DEL PERSONAJE PARA VALIDAR
+    });
+    const result = schema.validate(req.body);
+    if(result.error){
+      res.status(400).send(result.error.details[0].message);
+    } else {
+      let personaje = req.body;
+      personaje = await dataPersonajes.addPersonaje(personaje);
+      res.json(personaje);
+    } 
+});
+
 
 module.exports = router;
