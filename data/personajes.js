@@ -1,6 +1,7 @@
 const  connection = require('./connection');
 let objectId = require('mongodb').ObjectId;
 
+// ! Get All Personajes
 async function getPersonajes(){
     const clientmongo = await connection.getConnection();
     const personajes = await clientmongo.db('urbania')
@@ -18,6 +19,7 @@ async function getPersonaje(id) {
     return personaje;
 }
 
+// ! Add Personaje
 async function addPersonaje(personaje){
     const clientmongo = await connection.getConnection();
     const result = await clientmongo.db('urbania')
@@ -59,6 +61,6 @@ async function deletePersonaje(id) {
                                     .collection('personajes')
                                     .deleteOne({ _id: new objectId(id) });
     return result;
-  }
+}
 
 module.exports = {getPersonajes, getPersonaje, addPersonaje, updatePersonaje, deletePersonaje};

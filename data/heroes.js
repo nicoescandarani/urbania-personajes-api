@@ -9,6 +9,7 @@ async function getHeroes(){
                                         .toArray();
     return heroes;
 }
+
 async function getHero(id) {
   const clientmongo = await connection.getConnection();
   const hero = await clientmongo.db('urbania')
