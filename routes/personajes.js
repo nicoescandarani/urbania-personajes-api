@@ -9,6 +9,11 @@ router.get('/', async (req, res, next) => {
   res.json(personajes);
 });
 
+router.get('/:id', async (req, res) => {
+  const personaje = await dataPersonajes.getPersonaje(req.params.id);
+  res.json(personaje);
+});
+
 /* POST Añadir personaje sin ID (el objectID se genera en bbdd). */
 router.post('/', async (req, res)=>{
     const schema = joi.object({
@@ -24,5 +29,14 @@ router.post('/', async (req, res)=>{
     } 
 });
 
+router.delete('/:id', async (req, res)=>{
+  const personaje = await dataPersonajes.getPersonajes(req.params.id)
+  if(!personaje){
+      res.status(404).send('Personaje no encontrado');
+  } else {
+      dataPersonajes.deletePersonaje(req.params.id);
+      res.status(200).send('Personaje eliminado');
+  }
+});
 
 module.exports = router;
