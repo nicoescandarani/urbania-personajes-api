@@ -4,7 +4,7 @@ const dataPersonajes = require('../data/personajes');
 const joi = require('joi');
 
 /* GET personajes listing. */
-router.get('/', async function(req, res, next) {
+router.get('/', async (req, res, next) => {
   let personajes = await dataPersonajes.getPersonajes();
   res.json(personajes);
 });
