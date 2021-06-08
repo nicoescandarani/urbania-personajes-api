@@ -20,9 +20,8 @@ router.get('/:id', async (req, res) => {
 });
 
 // ! /api/heroes/
-router.post('/', async (req, res)=>{
+router.post('/', async (req, res) => {
     let hero = req.body;
-    console.log(hero);
     hero = await heroesData.addHero(hero);
     res.json(hero);
 });

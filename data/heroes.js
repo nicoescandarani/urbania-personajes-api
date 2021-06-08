@@ -19,11 +19,11 @@ async function getHero(id) {
 }
 
 async function addHero(hero){
-    const clientmongo = await connection.getConnection();
-    const result = await clientmongo.db('urbania')
-                                        .collection('heroes')
-                                        .insertOne(hero);
-    return result;
+  const clientmongo = await connection.getConnection();
+  const result = await clientmongo.db('urbania')
+                                      .collection('heroes')
+                                      .insertOne(hero);
+  return result;
 }
 
 async function updateHero(hero) {
