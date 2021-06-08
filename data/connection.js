@@ -2,7 +2,7 @@ const mongoclient = require('mongodb').MongoClient;
 require('dotenv').config();
 const uri = process.env.MONGO_URI;
 
-const client = new mongoclient(uri, {useUnifiedTopology : true});
+const client = new mongoclient(uri, { useUnifiedTopology: true });
 
 let instance = null;
 
@@ -18,4 +18,4 @@ async function getConnection(){
     return instance;
 }
 
-module.exports = {getConnection};
+module.exports = { getConnection };

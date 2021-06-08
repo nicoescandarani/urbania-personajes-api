@@ -4,14 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const cors = require('cors');
+
 var indexRouter = require('./routes/index');
 var personajesRouter = require('./routes/personajes');
+const heroesRouter = require('./routes/heroes');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -21,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/', indexRouter);
 app.use('/api/personajes', personajesRouter);
+app.use('/api/heroes', heroesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

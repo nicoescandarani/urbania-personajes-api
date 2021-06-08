@@ -1,0 +1,42 @@
+{
+    "userId": 8,
+    "name": "Cumbio",
+    "race": "Flogger",
+    "imgUrl": "https://www.diarioshow.com/export/sites/cronica/img/2018/03/23/1221693088129_f.jpg_1684940225.jpg",
+    "villain": false,
+    "stats": {
+        "wisdom": 10,
+        "power": 99,
+        "strength": 70,
+        "agility": 40,
+        "mana": 80
+    },
+    "money": 0,
+    "level": 1,
+    "enemiesDefeated": [],
+    "sashaGrade": true,
+    "weapons": [
+        {
+            "weaponId": 9,
+            "name": "ElectroBlade",
+            "stats": {
+                "wisdom": 10,
+                "power": 50,
+                "strength": 80,
+                "agility": -10,
+                "mana": 0
+            }
+        },
+        {
+            "weaponId": 9,
+            "name": "FlogPage",
+            "stats": {
+                "wisdom": 50,
+                "power": 100,
+                "strength": 100,
+                "agility": 20,
+                "mana": 100
+            }
+        }
+    ]
+}
