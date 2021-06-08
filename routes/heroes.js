@@ -28,6 +28,14 @@ router.post('/', async (req, res)=>{
 });
 
 // ! /api/heroes/id
+router.put('/:id', async (req, res) => {
+  let hero = req.body;
+  hero._id = req.params.id;
+  heroesData.updateHero(hero);
+  res.json(hero);
+});
+
+// ! /api/heroes/id
 router.delete('/:id', async (req, res) => {
     const hero = await heroesData.getHero(req.params.id);
     if(hero) {

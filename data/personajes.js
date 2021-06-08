@@ -15,8 +15,8 @@ async function getPersonajes(){
 async function getPersonaje(id) {
     const clientmongo = await connection.getConnection();
     const personaje = await clientmongo.db('urbania')
-                                    .collection('personajes')
-                                    .findOne({ _id: new objectId(id) });
+                                        .collection('personajes')
+                                        .findOne({ _id: new objectId(id) });
     return personaje;
 }
 
@@ -24,8 +24,8 @@ async function getPersonaje(id) {
 async function addPersonaje(personaje){
     const clientmongo = await connection.getConnection();
     const result = await clientmongo.db('urbania')
-                                        .collection('personajes')
-                                        .insertOne(personaje);
+                                    .collection('personajes')
+                                    .insertOne(personaje);
     return result;
 }
 
@@ -52,8 +52,8 @@ async function updatePersonaje(personaje) {
         }
     };
     const result = await clientmongo.db('urbania')
-                    .collection('personajes')
-                    .updateOne(query, newValues);
+                                    .collection('personajes')
+                                    .updateOne(query, newValues);
     return result;
 }
 
@@ -66,4 +66,4 @@ async function deletePersonaje(id) {
     return result;
 }
 
-module.exports = {getPersonajes, getPersonaje, addPersonaje, updatePersonaje, deletePersonaje};
+module.exports = { getPersonajes, getPersonaje, addPersonaje, updatePersonaje, deletePersonaje };
