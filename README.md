@@ -37,6 +37,8 @@
 
 ## Como usar
 
+**Solicitar fichero .env para poder acceder a los endpoints.**
+
 ```
 npm i
 ```
@@ -48,7 +50,7 @@ npm run startDev
 
 Para el build de producción:
 ```
-npm run startDev
+npm run start
 ```
 
 ## Endpoints - Heroes
@@ -112,4 +114,3 @@ DELETE
 ```
 api/personajes/:id
 ```
-
