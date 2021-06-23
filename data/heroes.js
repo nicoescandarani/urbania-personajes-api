@@ -49,7 +49,7 @@ async function updateHero(hero) {
   };
   const result = await clientmongo.db('urbania')
                   .collection('heroes')
-                  .updateOne(query, newValues);
+                  .updateOne(query, newValues, false, true);
   return result;
 }
 
