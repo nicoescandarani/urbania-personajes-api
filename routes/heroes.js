@@ -21,9 +21,10 @@ router.get('/:id', async (req, res) => {
 
 // ! /api/heroes/
 router.post('/', async (req, res) => {
-    let hero = req.body;
-    hero = await heroesData.addHero(hero);
-    res.json(hero);
+  console.log(req.body);
+  let hero = req.body;
+  hero = await heroesData.addHero(hero);
+  res.json(hero);
 });
 
 // ! /api/heroes/id
