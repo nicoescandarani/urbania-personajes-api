@@ -31,8 +31,11 @@ async function updateHero(hero) {
   const query = {_id: new objectId(hero._id)};
   const newValues = { $set: {
           id: hero.id,
+          alias: hero.alias,
           userId: hero.userId,
           name: hero.name,
+          race: hero.race,
+          imgUrl: hero.imgUrl,
           stats: {
               wisdom: hero.stats.wisdom,
               power: hero.stats.power,
